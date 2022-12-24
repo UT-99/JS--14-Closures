@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Closures</title>
+</head>
+<body>
+    <h1 class="mainheading">JS HANDSON - CLOSURES</h1>
+
+    <div class="boxes">
+        <h2>Ques. 1  </h2>
+        <pre class="code">
+            "function counter(){
+                var counter = 0;
+            
+                function IncreaseCounter() {
+                    return counter += 1;
+                };
+            
+                return IncreaseCounter;
+            }
+            
+            var counter = counter();
+            alert(counter());
+            alert(counter());
+            alert(counter());
+            alert(counter());"
+        </pre>
+
+        <h2>Output : 1 2 3 4 </h2>
+        
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+
+    <div class="boxes">
+        <h2>Ques. 2 </h2>
+        <pre class="code"> 
+        "let count = 0;
+            (function () {
+              if (count === 0) {
+                let count = 1;
+                console.log(count); // What is logged?
+              }
+              console.log(count); // What is logged?
+        })();"
+            
+        </pre>
+        
+        <h2>Output :1 0 </h2>
+        </h2>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques 3. </h2>
+        <pre class="code">
+        "for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+        }"
+
+        </pre>
+
+        <h2>Output : 3 3 3</h2>
+
+
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques 4. Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h2>
+        <pre class="code">
+        function OuterFunc() {
+            let num1 = 39;
+            function InnerFunc() {
+                let num2=78;
+                console,console.log(`The product of digits is:`,num1*num2);
+            }
+            return InnerFunc;
+        }
+        var innerFunc = OuterFunc();
+        innerFunc();
+
+        </pre>
+        
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques 5. Take a variable in outer function and create an inner function to increase the counter every time it is called</h2>
+        <pre class="code">
+        function counter(){
+            var count = 0;
+            function IncreaseCounter() {
+                return coun += 1;
+            };
+            return IncreaseCounter;
+        }
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+
+        </pre>
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques 6. </h2>
+        <pre class="code">"Print Output
+
+            var a = 12;
+            (function () {
+              alert(a);
+            })();"
+
+        </pre>
+        
+
+    <h2>Output : The alert box will be poped up on the window with value 12 .</h2>
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques. 7 </h2>
+        <pre class="code">"var a = 10;
+            var x = (function () {
+              var a = 12;
+              return function () {
+                alert(a);
+              };
+            })();
+            x();"
+
+        </pre>
+        <h2>Output : The alert box will be poped up on the window with value 12 .</h2>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="boxes">
+        <h2>Ques 8. </h2>
+        <pre class="code">"var globalVar = ""xyz"";
+
+            (function outerFunc(outerArg) {
+                var outerVar = 'a';
+                
+                (function innerFunc(innerArg) {
+                var innerVar = 'b';
+                
+                console.log(
+                    ""outerArg = "" + outerArg + ""\n"" +
+                    ""innerArg = "" + innerArg + ""\n"" +
+                    ""outerVar = "" + outerVar + ""\n"" +
+                    ""innerVar = "" + innerVar + ""\n"" +
+                    ""globalVar = "" + globalVar);
+                
+                })(456);
+            })(123);"
+            
+        </pre>
+        <h2>Output : outerArg = 123, 
+            inneArg = 456, 
+            outerVar = a, 
+            innerVar = b, 
+            globalvar = xyz</h2>
+    </div>
+
+    <h2 class="mainheading">***********************</h2>
+    <script src="main.js"></script>
+</body>
+</html>
